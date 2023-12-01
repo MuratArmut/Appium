@@ -13,13 +13,18 @@ public class KurulumDenemeTesti {
 
     AndroidDriver<MobileElement> driver;
 
+    // AndroidDriver<AndroidElement> driver1;
+    // AppiumDriver<MobileElement> driver2 ;
+
+
     @Test
     public void test01() throws MalformedURLException {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"PIXEL");
+
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"pixel");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"14.0");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
         capabilities.setCapability(MobileCapabilityType.APP,"C:\\Users\\murat\\IdeaProjects\\Appium_T120\\apps\\Calculator.apk");
 

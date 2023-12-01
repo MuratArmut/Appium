@@ -16,6 +16,7 @@
 
     <dependencies>
 
+        <!-- TestNG -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -32,6 +33,12 @@
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
             <version>7.5.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>4.1.5</version>
         </dependency>
 
     </dependencies>
