@@ -1,10 +1,11 @@
-package day01;
+package tests.day01;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -38,9 +39,6 @@ public class AppCalculator {
             100 un 5 katininin 500 oldugunu hesap makinasindan dogrular
          */
 
-        // com.google.android.calculator  (APK info uygulamasından aldık)
-        // com.google.android.calculator:id/op_mul
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"pixel");
@@ -59,6 +57,23 @@ public class AppCalculator {
                 (new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+
+        // uygulamanin yuklendigini dogrular(isInstalled)
+        Assert.assertTrue(driver.isAppInstalled("com.google.android.calculator")); // apk info dan aldık
+
+        // uygulamanin acildigini dogrular
+        Assert.assertTrue(driver.findElementByAccessibilityId("2").isDisplayed());
+
+        // 100 un 5 katininin 500 oldugunu hesap makinasindan dogrulayalim
+        driver.findElementByAccessibilityId("1").click();
+        driver.findElementByAccessibilityId("0").click();
+        driver.findElementByAccessibilityId("0").click();
+        driver.findElementByAccessibilityId("multiply").click();
+        driver.findElementByAccessibilityId("5").click();
+        String sonucKutusu = driver.findElementById("com.google.android.calculator:id/result_preview").getText();
+        System.out.println(sonucKutusu);
+        Assert.assertEquals(Integer.parseInt(sonucKutusu),500);
 
 
         }
