@@ -18,7 +18,7 @@ public class ReusableMethods {
     }
 
 
-    public static void screenScroolMethod(int pressXkoordinati, int pressYkoordinati, int wait, int moveXkoordinati, int moveYkoordinati, int bekleme) throws InterruptedException {
+    public static void screenScroolMethod (int pressXkoordinati, int pressYkoordinati, int wait, int moveXkoordinati, int moveYkoordinati, int bekleme) throws InterruptedException {
         TouchAction action = new TouchAction<>(Driver.getAndroidDriver());
         action.press(PointOption.point(pressXkoordinati, pressYkoordinati))
                 .waitAction(WaitOptions.waitOptions(Duration.ofMillis(wait)))
@@ -27,4 +27,12 @@ public class ReusableMethods {
                 .perform();
         Thread.sleep(bekleme);
     }
+
+    public static void scrollWithUiScrollable(String elementText) {
+        AndroidDriver driver = (AndroidDriver)  Driver.getAndroidDriver();
+        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
+        driver.findElementByXPath("//*[@text='" + elementText + "']").click();
+    }
+
+
 }

@@ -12,7 +12,7 @@ public class Driver {
 
     private static AndroidDriver<AndroidElement> appiumDriver;
 
-    static final String TELEFONADI="pixel";
+    static final String TELEFONADI="Pixel 2";
     static final String ANDROIDVERSION="10.0";
     static final String PLATFORM="Android";
     static final String OTOMASYON_ISMI="UiAutomator2";
@@ -34,8 +34,8 @@ public class Driver {
             caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, ANDROIDVERSION);
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME, PLATFORM);
             caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, OTOMASYON_ISMI);
-            caps.setCapability("appPackage","");
-            caps.setCapability("appActivity","");
+            caps.setCapability("appPackage","com.smartwho.SmartAllCurrencyConverter");
+            caps.setCapability("appActivity","com.smartwho.SmartAllCurrencyConverter.CurrencyConverter");
             caps.setCapability(MobileCapabilityType.NO_RESET,false); // true uygulama sifirlanmiyor onceki adimlari muhafaza ediyor
             //false ise her test baslangicinda sifirliyor
 

@@ -24,7 +24,7 @@ public class AppArabam {
     public void setUp() throws MalformedURLException {
 
         DesiredCapabilities capabilities=new DesiredCapabilities();
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"pixel");
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 2");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
         // capabilities.setCapability("platformName","Android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0");
