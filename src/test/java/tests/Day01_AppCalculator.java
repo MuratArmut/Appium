@@ -1,6 +1,5 @@
-package tests.day01;
+package tests;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -11,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class AppCalculator {
+public class Day01_AppCalculator {
 
 
     AndroidDriver<AndroidElement> driver;

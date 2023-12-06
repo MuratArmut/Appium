@@ -1,4 +1,4 @@
-package tests.day02;
+package tests;
 
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
@@ -16,7 +16,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 
-public class AppArabam {
+public class Day02_AppArabam {
 
     AndroidDriver<AndroidElement> driver;
 
@@ -49,6 +49,7 @@ public class AppArabam {
     public void arabamAppTest() throws InterruptedException {
 
         //  driver.activateApp("com.dogan.arabam");
+
         // uygulamanin basarili bir sekilde yuklendigi dogrulanir
         Assert.assertTrue(driver.isAppInstalled("com.dogan.arabam"));
 
@@ -66,13 +67,22 @@ public class AppArabam {
 
         TouchAction action = new TouchAction<>(driver);
 
-        action.press(PointOption.point(508,1538)) // press kismi ekranda tiklama kaydirma islemi icin tiklama yapacagimiz ilk nokta
-                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(75))) // baslangic noktasi ile bitis noktasi arasindaki gecen sure
-                // eger wait suresi uzun olursa gidilen yol mesafesi daha AZ olacaktir
-                // eger ki wait suresi kisa olursa gidilen yol mesafesi daha FAZLA olacaktir
-                .moveTo(PointOption.point(508,398)) // baslangic noktasindan baslayarak gidilecek bitis noktasinin  koordinatlarini ifade eder
-                .release() // parmagimizi tipki gunluk kullanimdaki gibi ekrandan kaldirma serbest birakma eylemidir
-                .perform(); // verilen action gorevlerini yerine getirmesi icin actiona verilen emirdir!
+        action.press(PointOption.point(508,1538))
+                         // press kismi ekranda tiklama kaydirma islemi icin tiklama yapacagimiz ilk nokta
+
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(75)))
+                         // baslangic noktasi ile bitis noktasi arasindaki gecen sure
+                         // eger wait suresi uzun olursa gidilen yol mesafesi daha AZ olacaktir
+                         // eger ki wait suresi kisa olursa gidilen yol mesafesi daha FAZLA olacaktir
+
+                .moveTo(PointOption.point(508,398))
+                         // baslangic noktasindan baslayarak gidilecek bitis noktasinin  koordinatlarini ifade eder
+
+                .release()
+                         // parmagimizi tipki gunluk kullanimdaki gibi ekrandan kaldirma serbest birakma eylemidir
+
+                .perform();
+                         // verilen action gorevlerini yerine getirmesi icin actiona verilen emirdir!
 
         Thread.sleep(1000);
 

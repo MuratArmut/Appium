@@ -1,4 +1,4 @@
-package tests.day04;
+package tests;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -13,7 +13,7 @@ import utilities.ReusableMethods;
 import java.io.File;
 import java.io.IOException;
 
-public class AllCurrencyApp {
+public class Day04_AllCurrencyApp {
 
     // önce driver objesi oluşturup Driver clasından atama yapacağız
     AndroidDriver<AndroidElement> driver= Driver.getAndroidDriver();
@@ -23,7 +23,7 @@ public class AllCurrencyApp {
     @Test
     public void allCurrencyTest() throws InterruptedException, IOException {
 
-        // all currency uygulamasinin yuklendigi dogulanir
+// all currency uygulamasinin yuklendigi dogulanir
         driver.isAppInstalled("com.smartwho.SmartAllCurrencyConverter");
 
 // uygulamanin acildigi dogrulanir

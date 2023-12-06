@@ -1,4 +1,4 @@
-package tests.day01;
+package tests;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;

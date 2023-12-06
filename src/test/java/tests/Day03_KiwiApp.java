@@ -1,4 +1,4 @@
-package tests.day03;
+package tests;
 
 
 import io.appium.java_client.android.AndroidDriver;
@@ -9,7 +9,7 @@ import pages.KiwiPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class KiwiApp {
+public class Day03_KiwiApp {
 
     AndroidDriver<AndroidElement> driver = Driver.getAndroidDriver();
 
@@ -17,10 +17,13 @@ public class KiwiApp {
 
     @Test
     public void kiwiAppTest() throws InterruptedException {
+
         // uygulamanin yuklendigi dogrulanir
         Assert.assertTrue(driver.isAppInstalled("com.skypicker.main"));
+
         // uygulamanin basariyla acildigi dogrulanir
         Assert.assertTrue(kiwiPage.misafirButonu.isDisplayed());
+
         // misafir olarak devam et e tiklanir
         kiwiPage.misafirButonu.click();
         // ardinda gelecek olan 3 adimada yesil butona basilarak devam edilir

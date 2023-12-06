@@ -1,22 +1,20 @@
-package tests.apkYukleme;
+package utilities;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
-import utilities.ConfigReader;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class apk {
+public class ApkYukle {
 
         AndroidDriver<AndroidElement> driver;
 
         @Test
-        public void apkYukleme() throws MalformedURLException {
+        public void apkYukle() throws MalformedURLException {
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
 
