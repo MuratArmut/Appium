@@ -29,14 +29,15 @@ public class Day04_AllCurrencyApp {
 // uygulamanin acildigi dogrulanir
         Assert.assertTrue(page.currentText.isDisplayed());
 
-// cevirmek istedigimiz para birimi zloty olarak secilir 369,321
+// cevirmek istedigimiz para birimi zloty olarak secilir 369,321 koordinatlar
         ReusableMethods.tiklamaMethodu(369,321,500);
         ReusableMethods.scrollWithUiScrollable("PLN");
 
-// cevirelecek olan para birimi Tl olarak secilir //365,468
+// cevirelecek olan para birimi Tl olarak secilir //365,468 koordinatlar
         ReusableMethods.tiklamaMethodu(365,468,500);
         ReusableMethods.scrollWithUiScrollable("TRY");
         page.oneButton.click();
+
         for (int i=0;i<3;i++){
             page.zeroButton.click();
         }

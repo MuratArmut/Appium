@@ -13,6 +13,7 @@ public class KiwiPage {
     public KiwiPage() {
         PageFactory.initElements((WebDriver) Driver.getAndroidDriver(), this);
     }
+                                                // WebDriver casting yaptık
 
     @FindBy(xpath = "//*[@text='Continue as a guest']")
     public WebElement misafirButonu;
